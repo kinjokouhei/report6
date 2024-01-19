@@ -33,6 +33,11 @@ class Board3x4 {
         }
     }
 
+
+
+
+
+
     public boolean makeMove(String move) {
         // 駒の移動を処理するロジックを実装する
         return true; // 仮の実装

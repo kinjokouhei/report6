@@ -15,9 +15,18 @@ public class Main {
             
             String move = scanner.next();
 
+
+
+
             Action actionInstance = new Action();
             actionInstance.goAhead();
+            actionInstance.goDown();
+            actionInstance.goLeft();
+            actionInstance.goRight();
 
+
+
+            
             if (isValidMove(move)) {
                 if (board.makeMove(move)) {
                     System.out.println("移動に成功！");
