@@ -10,9 +10,7 @@ public class Action extends Board3x4{
         board[0][0]++;
         board[0][1]++;
         board[0][2]++;
-        // ここで何か処理を行う
-    
-        // 例: サンプルとして board の内容を表示する
+      
         displayBoard();
     }
     void goDown() {
@@ -23,9 +21,7 @@ public class Action extends Board3x4{
         board[0][1]--;
         board[0][2]--;
 
-        // ここで何か処理を行う
 
-        // 例: サンプルとして board の内容を表示する
         displayBoard();
     }
 
@@ -38,9 +34,7 @@ public class Action extends Board3x4{
         board[2][0]--;
         board[3][0]--;
 
-        // ここで何か処理を行う
-
-        // 例: サンプルとして board の内容を表示する
+    
         displayBoard();
     }
 
@@ -53,9 +47,6 @@ public class Action extends Board3x4{
         board[2][0]++;
         board[3][0]++;
 
-        // ここで何か処理を行う
-
-        // 例: サンプルとして board の内容を表示する
         displayBoard();
     }
 
@@ -69,9 +60,6 @@ public class Action extends Board3x4{
             }
         }
 
-        // ここで何か処理を行う
-
-        // 例: サンプルとして board の内容を表示する
         displayBoard();
     }
 
@@ -85,9 +73,6 @@ public class Action extends Board3x4{
             }
         }
 
-        // ここで何か処理を行う
-
-        // 例: サンプルとして board の内容を表示する
         displayBoard();
     }
 
@@ -101,9 +86,6 @@ public class Action extends Board3x4{
             }
         }
 
-        // ここで何か処理を行う
-
-        // 例: サンプルとして board の内容を表示する
         displayBoard();
     }
 
@@ -117,13 +99,9 @@ public class Action extends Board3x4{
             }
         }
 
-        // ここで何か処理を行う
-
-        // 例: サンプルとして board の内容を表示する
         displayBoard();
     }
 
-    // 他のメソッドやフィールドは省略
 
 
 

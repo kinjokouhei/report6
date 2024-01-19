@@ -23,10 +23,14 @@ public class Main {
             actionInstance.goDown();
             actionInstance.goLeft();
             actionInstance.goRight();
+            actionInstance.goLeftAhead();
+            actionInstance.goLeftDown();
+            actionInstance.goRightAhead();
+            actionInstance.goRightDown();
 
 
 
-            
+
             if (isValidMove(move)) {
                 if (board.makeMove(move)) {
                     System.out.println("移動に成功！");
