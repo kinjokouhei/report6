@@ -1,6 +1,5 @@
-
+package jp.ac.uryukyu.ie.e235725;
 import java.util.Scanner;
-
 
 public class Main {
     public static void main(String[] args) {
@@ -11,34 +10,19 @@ public class Main {
 
         while (true) {
             board.displayBoard();
-            System.out.println("次に進める駒を選んでください（例: A2）");//：を消した
-            
+            System.out.println("次に進める駒を選んでください（例: A2）");
+
             String move = scanner.next();
-
-
-
+            char column = move.charAt(0);
+            int row = Integer.parseInt(move.substring(1)) - 1;
 
             Action actionInstance = new Action();
-            actionInstance.goAhead();
-            actionInstance.goDown();
-            actionInstance.goLeft();
-            actionInstance.goRight();
-            actionInstance.goLeftAhead();
-            actionInstance.goLeftDown();
-            actionInstance.goRightAhead();
-            actionInstance.goRightDown();
+            actionInstance.initializeBoard();; // Action クラスにボードをセット
 
-
-
-
-            if (isValidMove(move)) {
-                if (board.makeMove(move)) {
-                    System.out.println("移動に成功！");
-                } else {
-                    System.out.println("無効な移動です。もう一度やり直してください。");
-                }
+            if (actionInstance.isValidPosition(row, column)) {
+                actionInstance.movePiece(row, column);
             } else {
-                System.out.println("無効な入力です。正しい形式で入力してください（例: A2）");
+                System.out.println("無効な駒の選択です。");
             }
 
             if (board.isGameOver()) {
@@ -49,10 +33,4 @@ public class Main {
 
         scanner.close();
     }
-
-    private static boolean isValidMove(String move) {
-        // 入力が正しい形式かどうかを確認するための簡単な実装
-        return move.matches("[A-C][1-4]");
-    }
 }
-
