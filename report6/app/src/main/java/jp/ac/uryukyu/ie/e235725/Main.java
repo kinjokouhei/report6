@@ -1,36 +1,45 @@
 package jp.ac.uryukyu.ie.e235725;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Board3x4 board = new Board3x4();
-        board.initializeBoard();
-
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            board.displayBoard();
-            System.out.println("次に進める駒を選んでください（例: A2）");
+        // ゲームボードの初期化
+        ArrayList<ArrayList<Character>> initialBoard = new ArrayList<>();
+        Board3x4 board3x4 = new Board3x4(initialBoard);
+        board3x4.initializeBoard();
 
-            String move = scanner.next();
-            char column = move.charAt(0);
-            int row = Integer.parseInt(move.substring(1)) - 1;
+        // ゲームアクションの作成
+        Action action = new Action(board3x4.board);
 
-            Action actionInstance = new Action();
-            actionInstance.initializeBoard();; // Action クラスにボードをセット
+        try {
+            // ゲームの進行
+            while (true) {
+                // 盤面の表示
+                board3x4.displayBoard();
 
-            if (actionInstance.isValidPosition(row, column)) {
-                actionInstance.movePiece(row, column);
-            } else {
-                System.out.println("無効な駒の選択です。");
+       
+                System.out.println("どの駒を動かしますか？ 行（1-4）と列（A-C）を入力してください（例: 2B）:");
+                String playerInput = scanner.next();
+
+                // 入力を解析して行、列、および駒の種類に変換
+                int row = Integer.parseInt(playerInput.substring(0, 1)) - 1;
+                char column = playerInput.charAt(1);
+                char piece = ' '; // 適切な駒の種類に変更してください
+
+                // 駒の移動処理（駒の種類も指定）
+                // 駒の移動処理（駒の種類も指定）
+                action.movePiece(row, column, piece);
+
+
+                // 移動後の盤面の表示
+                board3x4.displayBoard();
             }
-
-            //if (board.isGameOver()) {
-                //System.out.println("ゲーム終了！");
-                //break;
-            }
+        } finally {
+            // Scannerを閉じる
+            scanner.close();
         }
-
-        //scanner.close();
     }
-//}
+}

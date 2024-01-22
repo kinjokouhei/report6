@@ -9,7 +9,9 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
 }
-
+java {                                      
+    sourceCompatibility = JavaVersion.VERSION_17
+}
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -41,14 +43,8 @@ tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
-jar {
+tasks.withType<Jar> {
     manifest {
-        attributes(
-                'Main-Class': 'jp.ac.uryukyu.ie.e235725.Main'
-        )
-    }
-
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+        attributes["Main-Class"] = "jp.ac.uryukyu.ie.e235725.App"
     }
 }
