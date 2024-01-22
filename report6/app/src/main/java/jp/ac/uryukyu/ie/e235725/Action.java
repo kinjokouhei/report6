@@ -42,7 +42,7 @@ class Action {
     /**
      * 上に移動する処理
      */
-    private void goUp(int row, char column, char piece) {
+    public void goUp(int row, char column, char piece) {
         
         if (row > 0) {
             char currentPiece = board.get(row).get(column - 'A');
@@ -58,7 +58,7 @@ class Action {
     /**
      * 下に移動する処理
      */
-    private void goDown(int row, char column, char piece) {
+    public void goDown(int row, char column, char piece) {
 
         if (row < board.size() - 1) {
             char currentPiece = board.get(row).get(column - 'A');
@@ -74,7 +74,7 @@ class Action {
     /**
      * 左に移動する処理
      */
-    private void goLeft(int row, char column, char piece) {
+    public void goLeft(int row, char column, char piece) {
 
         if (column > 'A') {
             char currentPiece = board.get(row).get(column - 'A');
@@ -90,7 +90,7 @@ class Action {
     /**
      * 右に移動する処理
      */
-    private void goRight(int row, char column, char piece) {
+    public void goRight(int row, char column, char piece) {
 
         if (column < 'C') {
             char currentPiece = board.get(row).get(column - 'A');
@@ -106,7 +106,7 @@ class Action {
     /**
      * 右上に移動する処理
      */
-    private void goRightUp(int row, char column, char piece) {
+    public void goRightUp(int row, char column, char piece) {
 
         if (row > 0 && column < 'C') {
             char currentPiece = board.get(row).get(column - 'A');
@@ -122,7 +122,7 @@ class Action {
     /**
      * 左上に移動する処理
      */
-    private void goLeftUp(int row, char column, char piece) {
+    public void goLeftUp(int row, char column, char piece) {
 
         if (row > 0 && column > 'A') {
             char currentPiece = board.get(row).get(column - 'A');
@@ -138,7 +138,7 @@ class Action {
     /**
      * 右下に移動する処理
      */
-    private void goRightDown(int row, char column, char piece) {
+    public void goRightDown(int row, char column, char piece) {
 
         if (row < board.size() - 1 && column < 'C') {
             char currentPiece = board.get(row).get(column - 'A');
@@ -154,7 +154,7 @@ class Action {
     /**
      * 左下に移動する処理
      */
-    private void goLeftDown(int row, char column, char piece) {
+    public void goLeftDown(int row, char column, char piece) {
 
         if (row < board.size() - 1 && column > 'A') {
             char currentPiece = board.get(row).get(column - 'A');
