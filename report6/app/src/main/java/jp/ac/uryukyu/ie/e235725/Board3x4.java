@@ -4,7 +4,11 @@ import java.util.List;
 
 class Board3x4 {
     ArrayList<ArrayList<Character>> board;
-
+    /**
+     * Board3x4 クラスのコンストラクタ。
+     *
+     * @param board ゲームボードの初期状態を表す2次元ArrayList。
+     */
     Board3x4(ArrayList<ArrayList<Character>> board) {
         this.board = board;
     }
