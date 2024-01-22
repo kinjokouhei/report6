@@ -28,7 +28,7 @@ class Board3x4 {
         System.out.println("--------");
     }
 
-    public boolean isGameOver() {
-        return getBoard()[0][0] == 'L' || getBoard()[0][0] == 'l';
-    }
+    //public boolean isGameOver() {
+        //return 
+    //}
 }

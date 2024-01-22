@@ -25,12 +25,12 @@ public class Main {
                 System.out.println("無効な駒の選択です。");
             }
 
-            if (board.isGameOver()) {
-                System.out.println("ゲーム終了！");
-                break;
+            //if (board.isGameOver()) {
+                //System.out.println("ゲーム終了！");
+                //break;
             }
         }
 
-        scanner.close();
+        //scanner.close();
     }
-}
+//}
