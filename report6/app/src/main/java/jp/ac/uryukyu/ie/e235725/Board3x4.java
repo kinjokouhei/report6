@@ -5,7 +5,10 @@ class Board3x4 {
     char[][] getBoard() {
         return board;
     }
-
+    /**
+     * ゲームボードを初期化する。
+     * 特定の位置に特定の駒が配置された3x4将棋盤。
+     */
     public void initializeBoard() {
         // 初期盤面
         board = new char[][]{
@@ -16,7 +19,9 @@ class Board3x4 {
                 //縦ABCD、 横123
         };
     }
-
+    /**
+     * 盤の状態を表示する。
+     */
     public void displayBoard() {
         // 盤面の表示
         for (int i = 0; i < 4; i++) {

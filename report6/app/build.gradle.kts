@@ -41,3 +41,14 @@ tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'jp.ac.uryukyu.ie.e235725.Main'
+        )
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
